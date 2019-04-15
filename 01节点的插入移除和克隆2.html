@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="father">
+    <div id="son"></div>
+</div>
+<div id="demo">
+    <span></span>
+</div>
+<input type="button" value="按钮" id="btn"/>
+<script>
+    var btn = document.getElementById("btn");
+    var father = document.getElementById("father");
+    var son = document.getElementById("son");
+    var demo = document.getElementById("demo");//页面上原有的节点
+    var cloneDemo = demo.cloneNode(true)//克隆出来的节点
+    btn.onclick = function () {
+        //appendChild   // 追加子节点 把一个节点放到父节点内部的最后
+        // father.appendChild(cloneDemo); /*克隆出来的对象对原来的额对象没有影响*/
+        father.appendChild(demo);
+        //insertBefore 插入到前面 把一个节点放到父节点内部 参考节点的前面
+        // father.insertBefore(demo,son);
+        //移除
+      father.removeChild(demo);
+
+    };
+
+    //移除子节点
+    //如果是页面上原有的节点 会被从原来的位置上揪下来 放到新的位置
+    //克隆出来的节点 和 原来的节点 互不影响
+
+</script>
+</body>
+</html>

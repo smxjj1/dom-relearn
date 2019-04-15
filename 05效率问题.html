@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="创建" id="btn"/>
+
+<div id="box"></div>
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick = function () {
+        var start = +new Date();
+        for (var i = 0; i < 1000; i++) {
+            box.innerHTML += "<ul><li>111</li></ul>";
+        }
+        var end = +new Date();
+        console.log(end - start);
+    };
+</script>
+</body>
+</html>

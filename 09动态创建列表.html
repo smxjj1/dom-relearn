@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .cls {
+            list-style: none;
+            width: 150px;
+            margin: 0;
+            padding: 0;
+            background-color: yellowgreen;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="创建"/>
+
+<div id="box"></div>
+<script>
+    var phones = ["小米", "华为", "中兴", "苹果", "三星", "魅族"];
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick = function () {
+        //一进来先检测 如果页面上已经有了 就返回 没有才追加
+        var ul = document.getElementById("u");
+        //如果有 是对象 如果没有 是null
+        if (ul) {
+            //如果能进来说明有了 就不再重复创建了
+            return;
+        }
+
+        ul = document.createElement("ul");
+        ul.id = "u";
+        ul.className = "cls";
+        box.appendChild(ul);
+        //创建li并追加到ul中
+        for (var i = 0; i < phones.length; i++) {
+            var phone = phones[i];//每个品牌
+            var li = document.createElement("li");
+            li.innerHTML = phone;
+            ul.appendChild(li);
+        }
+    };
+</script>
+</body>
+</html>

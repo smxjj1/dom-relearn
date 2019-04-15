@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+
+<div id="box">
+    <ul>
+        <li>原有内容</li>
+    </ul>
+</div>
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick = function () {
+        //document.write("<ul><li>111</li></ul>");//只能把也没上所有的东西都顶掉
+        //box.write("<ul><li>111</li></ul>");//不能限定范围
+        //box.innerHTML = "<ul><li>111</li></ul>";
+        //box.innerHTML = box.innerHTML + "<ul><li>111</li></ul>";//追加
+        box.innerHTML += "<ul><li>111</li></ul>";//追加
+    };
+</script>
+</body>
+</html>

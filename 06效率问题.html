@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="创建" id="btn"/>
+
+<div id="box"></div>
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick = function () {
+        var start = +new Date();
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr.push("<ul><li>111</li></ul>");
+            //1拼接字符串
+        }
+        box.innerHTML = arr.join("");
+        //2把字符串变成DOM对象
+        //3把DOM对象挂在DOM树上
+        //4还要渲染
+        var end = +new Date();
+        console.log(end - start);
+    };
+</script>
+</body>
+</html>

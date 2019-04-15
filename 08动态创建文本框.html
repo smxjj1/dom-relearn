@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="btn" value="创建"/>
+
+<div id="box"></div>
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick = function () {
+        //先判断 如果没有才创建 有就不重复创建了
+        var input = document.getElementById("t");
+        //如果有就是对象 如果没有就是null
+        if (input) {
+            //如果能进来说明是对象 也就是说 找到了
+            return;
+        }
+        input = document.createElement("input");
+        input.id = "t";
+        input.type = "text";
+        box.appendChild(input);
+    };
+</script>
+</body>
+</html>
